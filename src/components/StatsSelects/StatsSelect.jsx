@@ -15,7 +15,7 @@ function StatsSelect({ type, startValue, options, sendSelectedValue }) {
   const [open, setOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(startValue);
 
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const currentLng = i18n.language.slice(0, 2);
 
   const dropDownToggle = () => {

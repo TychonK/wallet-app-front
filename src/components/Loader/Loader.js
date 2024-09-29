@@ -11,7 +11,6 @@ const Spinner = props => {
   return (
     <div style={spinnerStyle}>
       <HashLoader
-        ariaLabel="loading-indicator"
         color="#00d4ff"
         size={100}
       />

@@ -15,7 +15,6 @@ import {
 } from './Balance.styled';
 
 import { getAllTransactions } from 'redux/transactions/transactions-selectors';
-import Loader from 'components/Loader';
 
 export default function Balance() {
   const location = useLocation();

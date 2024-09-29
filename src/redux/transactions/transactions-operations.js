@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { useTranslation } from 'react-i18next';
 import ApiServices from 'services/ApiServices';
 
 axios.defaults.baseURL = 'http://wallet-app-back.onrender.com';
