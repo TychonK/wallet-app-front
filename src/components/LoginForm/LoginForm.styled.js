@@ -5,21 +5,21 @@ export const FormWrapper = styled.div`
   padding: 107px 0px;
   background-color: ${({ theme }) => theme.headers};
   height: 100vh;
- 
+
   @media (min-width: 768px) {
-    width: 533px;
+    max-width: 533px;
     height: auto;
     margin: auto;
     padding: 40px 0px;
     border-radius: var(--border-radius);
   }
   @media (min-width: 1280px) {
-   
     max-width: 730px;
-    margin:0;
+    margin: 0;
     padding: 120px 110px;
- 
+
     border-radius: 0;
+    border-radius: 0 0 10px 10px;
     background: var(--color-blur);
     backdrop-filter: var(--backdrop-filter);
   }
@@ -33,7 +33,7 @@ export const FormBg = styled.div`
   flex-direction: column;
   @media (min-width: 1280px) {
     max-width: 533px;
-    padding:60px 40px;
+    padding: 60px 40px;
     border-radius: var(--border-radius);
     background: ${({ theme }) => theme.headers};
   }
@@ -67,7 +67,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   display: block;
   margin-left: 50px;
- 
+
   outline: 0;
   border: 0;
   font-family: 'Circe';
@@ -75,7 +75,6 @@ export const Input = styled.input`
   color: ${({ theme }) => theme.text};
   background-color: ${({ theme }) => theme.headers};
   &::placeholder {
-   
     font-family: 'Circe';
     font-style: normal;
     font-weight: 400;
@@ -83,7 +82,6 @@ export const Input = styled.input`
     line-height: 1.5;
     text-transform: capitalize;
   }
-
 `;
 
 export const InputIcon = styled.svg`
@@ -117,8 +115,8 @@ export const SignInBtn = styled.button`
   color: var(--color-white);
   transition: background-color 300ms var(--cubic-bezier),
     color 300ms var(--cubic-bezier);
-  &:hover, &:focus {
-   
+  &:hover,
+  &:focus {
     background-color: #03a682;
   }
   @media (min-width: 768px) {
@@ -145,8 +143,8 @@ export const SignUpBtn = styled(NavLink)`
   color: var(--color-primary);
   transition: background-color 300ms var(--cubic-bezier),
     color 300ms var(--cubic-bezier);
-  &:hover, &:focus {
-  
+  &:hover,
+  &:focus {
     background: var(--color-primary-light);
     color: var(--color-white);
   }

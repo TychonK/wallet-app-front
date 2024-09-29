@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import getCurrency from 'services/privat-bank-api';
+import getCurrency from 'services/exchange-rate-api';
 import PropTypes from 'prop-types';
 import Media from 'react-media';
 import {
@@ -24,7 +24,7 @@ export const Currency = () => {
 
     (async () => {
       setStatus('pending');
-      if (Date.now() - localCurrency?.time < 3600000) {
+      if (Date.now() - localCurrency?.time < 36) {
         // 3600000 = 1 hour
         setCurrency(localCurrency.data);
         setStatus('success');
@@ -36,6 +36,7 @@ export const Currency = () => {
 
           if (response.ok) {
             const data = await response.json();
+            console.log(data)
 
             localStorage.setItem(
               'currency',
@@ -65,13 +66,14 @@ export const Currency = () => {
       </TableHeader>
       <TableBody>
         {status === 'success' &&
-          currency.map(({ ccy, buy, sale }) => (
-            <TableRow key={ccy}>
-              <TableData>{ccy}</TableData>
-              <TableData>{parseFloat(buy).toFixed(2)}</TableData>
-              <TableData>{parseFloat(sale).toFixed(2)}</TableData>
-            </TableRow>
-          ))}
+          (
+            <TableRow key={currency.base}>
+              <TableData>{currency.base}</TableData>
+              <TableData>{parseFloat(currency.rates.PLN).toFixed(2)}</TableData>
+              <TableData>{parseFloat(currency.rates.EUR).toFixed(2)}</TableData>
+            </TableRow>)
+        }
+        {console.log(currency)}
         {status === 'pending' && (
           <HashLoader
             ariaLabel="loading-indicator"
