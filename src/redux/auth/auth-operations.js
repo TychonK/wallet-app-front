@@ -19,7 +19,7 @@ export const register = createAsyncThunk(
 
     try {
       const { data } = await axios.post(
-        'https://wallet-codewriters.herokuapp.com/api/auth/signup',
+        'https://wallet-app-back.onrender.com/api/auth/signup',
         credentials,
       );
       token.set(data.payload.token);
@@ -42,7 +42,7 @@ export const logIn = createAsyncThunk(
     // const { t } = useTranslation();
     try {
       const { data } = await axios.post(
-        'https://wallet-codewriters.herokuapp.com/api/auth/login',
+        'https://wallet-app-back.onrender.com/api/auth/login',
         credentials,
       );
       token.set(data.payload.token);
@@ -59,7 +59,7 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
   // const { t } = useTranslation();
 
   try {
-    await axios.get('https://wallet-codewriters.herokuapp.com/api/auth/logout');
+    await axios.get('https://wallet-app-back.onrender.com/api/auth/logout');
     token.unset();
   } catch (error) {
     // toast.error(t('error_something'));
@@ -79,7 +79,7 @@ export const fetchCurrentUser = createAsyncThunk(
     token.set(persistedToken);
     try {
       const { data } = await axios.get(
-        'http://wallet-codewriters.herokuapp.com/api/users/current',
+        'http://wallet-app-back.onrender.com/api/users/current',
       );
       return data;
     } catch (error) {
