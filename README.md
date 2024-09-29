@@ -1,93 +1,94 @@
-# Getting Started with Create React App
+# 💳 Wallet App Frontend
 
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
+Welcome to the **Wallet App**! This is the frontend part of an online wallet application that allows users to manage their personal finances efficiently, with features like transaction management, currency rate tracking, and more. The app is built with modern web technologies, offering an intuitive user interface with multi-language support.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **📈 Transaction Management**  
+  Easily add, delete, and track transactions to monitor your income and expenses.
+  
+- **💱 Currency Rates**  
+  View real-time exchange rates and adjust your transactions based on current market rates.
+  
+- **📊 Statistics Dashboard**  
+  Get insightful statistics on your spending and savings habits with beautifully designed graphs and charts.
 
-### `npm start`
+- **🌐 Multi-Language Support**  
+  Switch between two languages for a more personalized experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **🔐 User Authentication**  
+  - Sign up and log in functionality.
+  - Securely manage your data and preferences.
+  
+- **💾 Backend Integration**  
+  This frontend communicates with a custom-built backend for secure data management. Check out the backend repository [here](https://github.com/TychonK/wallet-app-front).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **Frontend Framework:** React.js
+- **Styling:** CSS, SCSS
+- **State Management:** Redux / Context API
+- **Routing:** React Router
+- **API Communication:** Axios / Fetch API
+- **Internationalization (i18n):** React-i18next
+- **Charts & Graphs:** Chart.js / D3.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
+## 🏁 Getting Started
 
-### `npm run build`
+To get the frontend part of the app running on your local machine, follow these simple steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best
-performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js** (v18.x or higher)
+- **npm** or **yarn**
 
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
+### Installation
 
-### `npm run eject`
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/your-username/wallet-app-front.git
+   cd wallet-app-front
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Install dependencies**  
+   ```bash
+   npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can
-`eject` at any time. This command will remove the single build dependency from
-your project.
+3. **Run the development server**
+    ```bash
+    npm start
+    
+The app will be available at http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive
-dependencies (webpack, Babel, ESLint, etc) right into your project so you have
-full control over them. All of the commands except `eject` will still work, but
-they will point to the copied scripts so you can tweak them. At this point
-you're on your own.
+## ⚙️ Configuration
 
-You don't have to ever use `eject`. The curated feature set is suitable for
-small and middle deployments, and you shouldn't feel obligated to use this
-feature. However we understand that this tool wouldn't be useful if you couldn't
-customize it when you are ready for it.
+The app connects to a custom backend. Make sure to configure the API base URL in your environment variables.
 
-## Learn More
+Create a `.env` file in the root of your project:
+    ```bash
+    REACT_APP_API_URL=<your-backend-url>
 
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Ensure the backend is running before starting the frontend.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🌍 Multi-Language Support
 
-### Code Splitting
+The app currently supports the following languages:
+- 🇺🇸 English
+- 🇺🇦 Ukrainian
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You can easily switch between languages via the settings page.
 
-### Analyzing the Bundle Size
+## 📊 Statistics & Charts
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Utilize dynamic charts to track and visualize transaction patterns. Data is fetched in real-time from the backend and displayed using user-friendly graphs.
 
-### Making a Progressive Web App
+## 🧑‍💻 Contribution Guidelines
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+We welcome contributions from the community! To contribute:
 
-### Advanced Configuration
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Submit a pull request with a detailed explanation of your changes.
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📄 License
 
-### Deployment
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-Personal Wallet Project
+This project is licensed under the MIT License.
