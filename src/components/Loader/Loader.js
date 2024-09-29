@@ -1,4 +1,4 @@
-import { TailSpin } from 'react-loader-spinner';
+import { HashLoader } from 'react-spinners';
 import React from 'react';
 
 const Spinner = props => {
@@ -10,11 +10,10 @@ const Spinner = props => {
   };
   return (
     <div style={spinnerStyle}>
-      <TailSpin
+      <HashLoader
         ariaLabel="loading-indicator"
-        color="var(--color-primary)"
-        height={100}
-        width={100}
+        color="#00d4ff"
+        size={100}
       />
     </div>
   );

@@ -12,7 +12,7 @@ import {
   TableFooter,
 } from './Currency.styled';
 import { useTranslation } from 'react-i18next';
-import { TailSpin } from 'react-loader-spinner';
+import { HashLoader } from 'react-spinners';
 
 export const Currency = () => {
   const [currency, setCurrency] = useState([]);
@@ -73,11 +73,10 @@ export const Currency = () => {
             </TableRow>
           ))}
         {status === 'pending' && (
-          <TailSpin
+          <HashLoader
             ariaLabel="loading-indicator"
-            color="var(--color-white)"
-            height={80}
-            width={80}
+            color="#00d4ff"
+            size={80}
           />
         )}
       </TableBody>
