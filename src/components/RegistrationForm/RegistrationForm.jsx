@@ -1,8 +1,10 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Logo, LanguageSwitcher } from 'components';
 import { register } from '../../redux/auth/auth-operations';
+
+import { HashLoader } from 'react-spinners';
 
 import { useTranslation } from 'react-i18next';
 import * as yup from 'yup';
@@ -23,6 +25,10 @@ import {
 const RegistrationForm = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+
+  const isLoading = useSelector((state) => state.auth.authReducer.isLoading);
+
+
   const initialValues = {
     email: '',
     password: '',
@@ -65,6 +71,16 @@ const RegistrationForm = () => {
       validateOnBlur
     >
       {({ values, handleSubmit, handleChange, errors }) => (
+        isLoading ? (
+          <div style={{
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+      }}>
+              <HashLoader color="#00d4ff" size={100} />
+            </div>
+          ) : (
         <Form>
           <Wrap>
             <Switcher>
@@ -72,6 +88,8 @@ const RegistrationForm = () => {
             </Switcher>
             <Logo />
           </Wrap>
+          
+           
           <div>
             <Label htmlFor="email">
               <Icon width="20" height="20">
@@ -137,13 +155,14 @@ const RegistrationForm = () => {
               />
               <ErrMessage>{errors.name}</ErrMessage>
             </Label>
-          </div>
-
+            </div>
+           
           <Button type="submit" onClick={handleSubmit}>
             {t('register')}
           </Button>
           <ButtonLink to="/login">{t('login')}</ButtonLink>
         </Form>
+        )
       )}
     </Formik>
   );

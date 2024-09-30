@@ -7,14 +7,14 @@ export const FormWrapper = styled.div`
   height: 100vh;
 
   @media (min-width: 768px) {
-    max-width: 533px;
+    width: 533px;
     height: auto;
     margin: auto;
     padding: 40px 0px;
     border-radius: var(--border-radius);
   }
   @media (min-width: 1280px) {
-    max-width: 730px;
+    width: 730px;
     margin: 0;
     padding: 120px 110px;
 
@@ -32,6 +32,7 @@ export const FormBg = styled.div`
   align-items: center;
   flex-direction: column;
   @media (min-width: 1280px) {
+  min-height: 489px;
     max-width: 533px;
     padding: 60px 40px;
     border-radius: var(--border-radius);
