@@ -51,10 +51,11 @@ export const LogoutBtn = styled.button`
   background-color: ${({ theme }) => theme.headers};
   border: none;
   border-radius: 5px;
-  padding-left: 12px;
+  margin: 0 0 0 12px;
+  padding: 2px 10px;
 
   transition: color 250ms var(--cubic-bezier),
-    background-color 250ms var(--cubic-bezier);
+  background-color 250ms var(--cubic-bezier);
 
   ${size.tablet} {
     &:hover,
@@ -85,7 +86,7 @@ export const ExitIcon = styled.svg`
 export const UserName = styled.p`
   ${size.tablet} {
     transform: translateY(3px);
-    padding: 0px 12px 6px 0;
+    padding: 0px 16px 0 0;
     border-right: 1px solid;
   }
 `;

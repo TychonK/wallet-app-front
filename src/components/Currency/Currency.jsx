@@ -72,7 +72,6 @@ export const Currency = () => {
               <TableData>{parseFloat(currency.rates.EUR).toFixed(2)}</TableData>
             </TableRow>)
         }
-        {console.log(currency)}
         {status === 'pending' && (
           <HashLoader
             ariaLabel="loading-indicator"

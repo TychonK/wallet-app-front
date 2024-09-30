@@ -5,6 +5,7 @@ export const Container = styled.div`
 `;
 
 export const Select = styled.select`
+  padding: 2px 5px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -21,7 +22,7 @@ export const Select = styled.select`
   text-transform: uppercase;
 
   transition: color 250ms var(--cubic-bezier),
-    background-color 250ms var(--cubic-bezier);
+  background-color 250ms var(--cubic-bezier);
 
   @media (min-width: 768px) {
     font-size: 18px;
