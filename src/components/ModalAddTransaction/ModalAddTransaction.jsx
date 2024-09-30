@@ -56,7 +56,7 @@ const ModalAddTransaction = ({ closeModal: setModal }) => {
       category: Yup.string(),
     }),
     onSubmit: values => {
-      values = { ...values, category: categ, date: dt.toLocaleString([], { day: 'numeric', month: 'numeric', year: 'numeric' }), sum: +sum };
+      values = { ...values, category: categ, date: dt.toLocaleDateString('en-US'), sum: +sum };
       dispatch(operations.addTransaction(values));
       setModal(false);
     },

@@ -36,7 +36,6 @@ export const Currency = () => {
 
           if (response.ok) {
             const data = await response.json();
-            console.log(data)
 
             localStorage.setItem(
               'currency',
