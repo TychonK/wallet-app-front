@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Switcher = styled.button`
-  position: absolute;
+  position: fixed;
   bottom: 20px;
-  left: 20px;
+  left: 10px;
   padding: 0.5rem;
   background: none;
   border: none;
@@ -14,5 +14,9 @@ export const Switcher = styled.button`
 
   &:hover {
     color: ${({ theme }) => theme.text};
+  }
+
+  @media (min-width: 768px) {
+    left: 20px;
   }
 `;

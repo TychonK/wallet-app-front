@@ -10,15 +10,16 @@ export const TabSection = styled.section`
   }
 
   @media (min-width: 768px) {
+    padding-top: 40px;
     display: flex;
     justify-content: space-between;
-    width: 704px;
+    width: 680px;
   }
 
   @media (min-width: 1280px) {
     // padding-top: 32px;
     // padding-left: 69px;
-    //   width: 800px;
+     width: 730px;
   }
 `;
 

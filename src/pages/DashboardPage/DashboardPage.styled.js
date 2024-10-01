@@ -76,9 +76,9 @@ export const HomeTabWrap = styled.div`
 `;
 
 export const CurrencyWrap = styled.div`
-    margin-top: 28px;
+    margin: 28px 0 0 0;
     ${size.tablet}{
-        margin-top: 0px;
+        margin: 0 0 0 20px;
       }
     ${size.desktop}{
         margin-top: 32px;

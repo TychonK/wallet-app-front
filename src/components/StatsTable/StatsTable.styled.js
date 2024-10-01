@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const ContentWrapper = styled.div`
-@media (min-width: 768px) { 
-  padding-top: 65px;
-}
+
 `
 
 export const SelectsWrapper = styled.div`
@@ -29,12 +27,14 @@ export const Table = styled.table`
   width: 280px;
   border-collapse: collapse;
   border-spacing: 0;
+  margin-top: 20px;
 
   font-family: 'Circe';
   font-style: normal;
 
   @media (min-width: 768px) {
     width: 336px;
+    margin: 0;
   }
 
   @media (min-width: 1280px) {
