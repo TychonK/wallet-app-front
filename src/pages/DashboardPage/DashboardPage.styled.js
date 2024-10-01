@@ -81,7 +81,7 @@ export const CurrencyWrap = styled.div`
         margin: 0 0 0 20px;
       }
     ${size.desktop}{
-        margin-top: 32px;
+        margin: 32px 0 0 0;
     }
     `
 export const TabletBalanceWrap = styled.div`
