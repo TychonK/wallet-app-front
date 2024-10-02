@@ -129,7 +129,7 @@ export const WrapperPage = styled.div`
 
   @media screen and (min-width: 1280px) {
     display: flex;
-    width: 100%;
+    justify-content: center;
   }
 `;
 export const WrapperForm = styled.div`
