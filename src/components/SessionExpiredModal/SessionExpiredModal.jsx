@@ -4,12 +4,14 @@ import { hideSessionExpiredModal } from 'redux/modalSlice';
 import { logOut } from 'redux/auth/auth-operations';
 import ModalWindow from 'components/ModalWindow';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ModalContainer, BtnContainer, CloseBtn, CloseIcon, ConfirmBtn, Message, Title } from './SessionExpiredModal.styled';
 
 const SessionExpiredModal = () => {
   const dispatch = useDispatch();
   const sessionExpired = useSelector((state) => state.modal.sessionExpired);
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   if (!sessionExpired) return null;
 
@@ -28,11 +30,11 @@ const SessionExpiredModal = () => {
           </CloseIcon>
         </CloseBtn>
 
-        <Title>Session Expired</Title>
-        <Message>Your session has expired. Please log in again to continue.</Message>
+        <Title>{t('session_expired_title')}</Title>
+        <Message>{t('session_expired_text')}</Message>
 
         <BtnContainer>
-          <ConfirmBtn onClick={handleClose}>Go to Login</ConfirmBtn>
+          <ConfirmBtn onClick={handleClose}>{t('session_expired_login')}</ConfirmBtn>
         </BtnContainer>
       </ModalContainer>
     </ModalWindow>

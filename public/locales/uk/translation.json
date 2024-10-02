@@ -3,12 +3,17 @@
   "app_title": "Фінансовий застосунок",
   "ok": "Так",
   "delete_ok": "Так, видалити",
-  "delete_sure": "Ви впевнені, що хочете видалити цю трансакцію?",
+  "delete_sure": "Ви впевнені, що хочете видалити цю трансакцію",
 
   "register": "Реєстрація",
   "login": "Вхід",
   "logout": "Вийти",
   "logout_sure": "Ви впевнені, що хочете вийти",
+
+  "session_expired_title": "Session Expired",
+  "session_expired_text": "Your session has expired. Please log in again to continue.",
+  "session_expired_login": "Go to Login",
+
 
   "ccy": "Валюта",
   "buy": "Купівля",
