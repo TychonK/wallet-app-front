@@ -74,15 +74,15 @@ export const CheckboxText = styled.span`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
-  color: ${({ theme }) => theme.gray}; // Theme color for checkbox text
+  color: ${({ theme }) => theme.gray}; 
 `;
 
 export const CheckboxTextPlus = styled(CheckboxText)`
-  color: ${({ theme }) => theme.primary}; // Theme color for "income" (plus)
+  color: ${({ theme }) => theme.primary}; 
 `;
 
 export const CheckboxTextMinus = styled(CheckboxText)`
-  color: var(--color-tertiary); // Adjust if tertiary color exists in your theme
+  color: var(--color-tertiary); 
 `;
 
 export const ModalSelect = styled.select`
@@ -96,13 +96,13 @@ export const ModalSelect = styled.select`
   line-height: 1.5;
   border: transparent;
   outline: none;
-  border-bottom: 1px solid ${({ theme }) => theme.gray}; // Theme color for border
+  border-bottom: 1px solid ${({ theme }) => theme.gray}; 
   background: ${({ theme }) =>
-    theme.headers}; // Theme color for select background
-  color: ${({ theme }) => theme.text}; // Theme color for text
+    theme.headers}; 
+  color: ${({ theme }) => theme.text}; 
 
   &::placeholder {
-    color: ${({ theme }) => theme.gray}; // Placeholder color from theme
+    color: ${({ theme }) => theme.text}; 
   }
 `;
 
@@ -223,7 +223,7 @@ export const ErrorMesage = styled.p`
   font-weight: bold;
   color: var(
     --color-tertiary
-  ); // Customize for error message color or add to theme
+  ); 
 
   @media (min-width: 768px) {
     margin: 0;

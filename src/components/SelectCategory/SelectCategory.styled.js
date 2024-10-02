@@ -4,7 +4,8 @@ export const SelectWrapper = styled.div`
   position: relative;
 `;
 
-export const SelectTitle = styled.div``;
+export const SelectTitle = styled.div`
+`;
 
 export const SelectButton = styled.button`
   height: 32px;
@@ -28,6 +29,8 @@ export const SelectTitleText = styled.p`
   font-size: 18px;
   line-height: 1.5;
   color: var(--color-gray-light);
+
+  color: ${({ theme }) => theme.text};
 `;
 
 export const SelectItemText = styled(SelectTitleText)`

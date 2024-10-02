@@ -46,7 +46,8 @@ export const CustomDateTimeStyles = styled.div`
   .rdtPicker {
     background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.text};
-    border: 1px solid ${({ theme }) => theme.gray};
+    border: none;
+    border-radius: 10px;
   }
 
   .rdtPicker th,
