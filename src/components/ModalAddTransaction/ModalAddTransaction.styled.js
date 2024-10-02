@@ -16,6 +16,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalBtn = styled.button`
+
   position: absolute;
   top: 20px;
   right: 20px;
@@ -23,6 +24,25 @@ export const ModalBtn = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
+
+  
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  color: var(--color-primary);
+
+  transition: background-color 250ms var(--cubic-bezier),
+    color 250ms var(--cubic-bezier), transform 250ms var(--cubic-bezier);
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    transform: scale(1.1);
+  }
 
   @media (max-width: 767px) {
     display: none;

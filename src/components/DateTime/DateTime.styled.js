@@ -19,13 +19,16 @@ export const ModalInput = styled.input`
   outline: none;
   border-bottom: 1px solid var(--color-gray-light);
   box-sizing: border-box;
+  color: ${({ theme }) => theme.gray};
+
+  background-color: ${({ theme }) => theme.headers};
 
   @media (min-width: 768px) {
     width: 185px;
   }
 
   &::placeholder {
-    color: black;
+    color: ${({ theme }) => theme.gray};
   }
 `;
 
@@ -36,4 +39,32 @@ export const DateIcon = styled.button`
   background: transparent;
   border: none;
   outline: none;
+`;
+
+
+export const CustomDateTimeStyles = styled.div`
+  .rdtPicker {
+    background-color: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.text};
+    border: 1px solid ${({ theme }) => theme.gray};
+  }
+
+  .rdtPicker th,
+  .rdtPicker td,
+  .rdtPicker span {
+    color: ${({ theme }) => theme.text}; // Date text color
+  }
+
+  .rdtPicker .rdtDay:hover,
+  .rdtPicker .rdtMonth:hover,
+  .rdtPicker .rdtYear:hover {
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.text}; // Active item color on hover
+  }
+
+  .rdtPicker .rdtActive {
+    background-color: ${({ theme }) =>
+      theme.primary}; // Selected date background
+    color: ${({ theme }) => theme.headers}; // Selected date text color
+  }
 `;

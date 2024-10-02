@@ -1,6 +1,6 @@
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
-import { DateInput, ModalInput, DateIcon } from './DateTime.styled';
+import { DateInput, ModalInput, DateIcon, CustomDateTimeStyles } from './DateTime.styled';
 import sprite from 'images/sprite.svg';
 
 const DateTime = ({date, setDt}) => {
@@ -20,7 +20,18 @@ const DateTime = ({date, setDt}) => {
         );
     };
   
-    return <Datetime renderInput={renderInput} value={date} dateFormat="DD.MM.YYYY"  timeFormat={false} closeOnSelect onChange={(e)=>setDt(e._d)}/>;
+    return (
+        <CustomDateTimeStyles>
+            <Datetime 
+            renderInput={renderInput} 
+            value={date} 
+            dateFormat="DD.MM.YYYY" 
+            timeFormat={false} 
+            closeOnSelect 
+            onChange={(e)=>setDt(e._d)} 
+            />
+        </CustomDateTimeStyles>
+    )
 }
 
 export default DateTime;

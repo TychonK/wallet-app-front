@@ -44,7 +44,7 @@ export const Table = styled.table`
 export const TableHeader = styled.thead`
   width: 280px;
 
-  background-color: ${({ theme }) => theme.headers};;
+  background-color: ${({ theme }) => theme.headers};
 `;
 
 export const HeadCell = styled.th`
