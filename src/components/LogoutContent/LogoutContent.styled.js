@@ -19,8 +19,7 @@ export const CloseBtn = styled.button`
   padding: 0;
   color: var(--color-primary);
   background-color: var(--color-white);
-  border: 1px solid var(--color-primary);
-  border-radius: 50%;
+  border: none;
   cursor: pointer;
 
   transition: transform 2500ms var(--cubic-bezier),
@@ -59,12 +58,16 @@ export const BtnContainer = styled.div`
 `;
 
 export const ConfirmBtn = styled.button`
-  width: 150px;
   height: 50px;
+  padding: 0 20px 0 20px;
+
   margin-left: 30px;
   margin-top: 30px;
+
   background: var(--color-secondary);
   border-radius: 20px;
+  border: transparent;
+
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -72,7 +75,6 @@ export const ConfirmBtn = styled.button`
   text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border: transparent;
   color: var(--color-white);
 
   transition: background-color 250ms var(--cubic-bezier),
@@ -86,13 +88,16 @@ export const ConfirmBtn = styled.button`
 `;
 
 export const CancelBtn = styled.button`
-  width: 150px;
   height: 50px;
+  padding: 0 20px 0 20px;
+
   margin-left: 30px;
   margin-top: 30px;
+
   background: var(--color-white);
   border: 1px solid var(--color-primary);
   border-radius: 20px;
+
   font-style: normal;
   font-weight: 400;
   font-size: 18px;

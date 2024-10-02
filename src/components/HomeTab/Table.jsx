@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { useDispatch } from 'react-redux';
 import EllipsisText from 'react-ellipsis-text';
 import { useTranslation } from 'react-i18next';
@@ -13,17 +15,31 @@ import {
   ButtonDelete,
   NoTransactions,
 } from './Table.styled';
+
 import sprite from 'images/sprite.svg';
+
+import ModalWindow from 'components/ModalWindow';
+import DeleteModal from './DeleteModal';
+
 import { operations } from '../../redux/transactions/transactions-operations';
 /*компонент отримує масив для рендеру як по ТЗ*/
 
 function Table({ data }) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language.slice(0, 2);
+
   const dispatch = useDispatch();
+
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [currentId, setCurrentId] = useState(null);
 
   const onDelete = _id => {
     dispatch(operations.deleteTransaction(_id));
+  };
+
+  const handleOpenModal = _id => {
+    setCurrentId(_id); // Set the ID of the transaction to be deleted
+    setModalOpen(true); // Open the modal
   };
 
   return (
@@ -76,7 +92,7 @@ function Table({ data }) {
                   </TableCellColor>
                   <TableCell>{balance}</TableCell>
                   <TableCell>
-                    <ButtonDelete onClick={() => onDelete(_id)}>
+                    <ButtonDelete onClick={() => handleOpenModal(_id)}>
                       <svg width="16" height="16">
                         <use href={`${sprite}#bin`} />
                       </svg>
@@ -87,6 +103,15 @@ function Table({ data }) {
             )}
           </TableBody>
         </TableMain>
+      )}
+      {isModalOpen && (
+        <ModalWindow closeModal={setModalOpen}>
+          <DeleteModal
+            setModal={setModalOpen}
+            onDelete={onDelete}
+            _id={currentId}
+          />
+        </ModalWindow>
       )}
     </>
   );

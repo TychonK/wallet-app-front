@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { useDispatch } from 'react-redux';
 import {
   MobileCard,
@@ -8,7 +10,12 @@ import {
   NoTransactions,
   MobileButtonDelete,
 } from './TableMobile.styled';
+
 import sprite from 'images/sprite.svg';
+
+import ModalWindow from 'components/ModalWindow';
+import DeleteModal from './DeleteModal';
+
 import { useTranslation } from 'react-i18next';
 import { operations } from '../../redux/transactions/transactions-operations';
 
@@ -18,8 +25,16 @@ function TableMobile({ data }) {
 
   const dispatch = useDispatch();
 
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [currentId, setCurrentId] = useState(null);
+
   const onDelete = _id => {
     dispatch(operations.deleteTransaction(_id));
+  };
+
+  const handleOpenModal = _id => {
+    setCurrentId(_id); // Set the ID of the transaction to be deleted
+    setModalOpen(true); // Open the modal
   };
 
   return (
@@ -77,7 +92,7 @@ function TableMobile({ data }) {
                   <MobileCardItem>{t('balance')}</MobileCardItem>
                   <MobileCardItemValue>{balance}</MobileCardItemValue>
                 </MobileCardGroup>
-                <MobileButtonDelete onClick={() => onDelete(_id)}>
+                <MobileButtonDelete onClick={() => handleOpenModal(_id)}>
                   <svg width="16" height="16">
                     <use href={`${sprite}#minus-btn`} />
                   </svg>
@@ -86,6 +101,15 @@ function TableMobile({ data }) {
             ),
           )}
         </>
+      )}
+      {isModalOpen && (
+        <ModalWindow closeModal={setModalOpen}>
+          <DeleteModal
+            setModal={setModalOpen}
+            onDelete={onDelete}
+            _id={currentId}
+          />
+        </ModalWindow>
       )}
     </>
   );
