@@ -8,6 +8,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const CloseBtn = styled.button`
+border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,17 +19,17 @@ export const CloseBtn = styled.button`
   height: 30px;
   padding: 0;
   color: var(--color-primary);
-  background-color: var(--color-white);
+  background-color: ${({ theme }) => theme.headers};
   border: none;
   cursor: pointer;
 
-  transition: transform 2500ms var(--cubic-bezier),
+  transition: transform 250ms var(--cubic-bezier),
     color 250ms var(--cubic-bezier), background-color 250ms var(--cubic-bezier),
     animation 250ms var(--cubic-bezier);
 
   &:hover,
   &:focus-within {
-    transform: scale(1.1) rotate(360deg);
+    transform: scale(1.1) rotate(180deg);
     color: var(--color-white);
     background-color: var(--color-primary);
   }

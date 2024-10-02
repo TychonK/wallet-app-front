@@ -9,12 +9,16 @@ import {
     ConfirmBtn,
     CancelBtn,
  } from 'components/LogoutContent/LogoutContent.styled';
+import { useTranslation } from 'react-i18next';
 
 const DeleteModal = ({ setModal, onDelete, _id }) => {
+
   const handleDelete = () => {
     onDelete(_id); // Call the deletion function
     setModal(false); // Close the modal after deletion
   };
+    
+     const { t } = useTranslation();
 
   return (
     <ModalContainer>
@@ -29,11 +33,11 @@ const DeleteModal = ({ setModal, onDelete, _id }) => {
         </CloseIcon>
       </CloseBtn>
 
-      <Title>Are you sure you want to delete this transaction?</Title>
+      <Title>{t('delete_sure')}?</Title>
 
       <BtnContainer>
         <ConfirmBtn type="button" onClick={handleDelete}>
-          Yes, Delete
+          {t('delete_ok')}
         </ConfirmBtn>
         <CancelBtn
           type="button"
@@ -41,7 +45,7 @@ const DeleteModal = ({ setModal, onDelete, _id }) => {
             setModal(false);
           }}
         >
-          Cancel
+          {t('cancel')}
         </CancelBtn>
       </BtnContainer>
     </ModalContainer>
