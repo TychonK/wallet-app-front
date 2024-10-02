@@ -6,8 +6,8 @@ class ApiServices {
     try {
       const { data } = await axios.post('/api/auth/login', userData);
       return data.payload;
-    } catch (e) {
-      console.log(e.message);
+    } catch (error) {
+      throw error;
     }
   }
 
@@ -16,8 +16,8 @@ class ApiServices {
       const req = await axios.get('/api/auth/logout');
 
       return req.data;
-    } catch (e) {
-      console.log(e.message);
+    } catch (error) {
+      throw error;
     }
   }
 
@@ -25,8 +25,8 @@ class ApiServices {
     try {
       const { data } = await axios.post('/api/auth/signup', userData);
       return data.payload.user;
-    } catch (e) {
-      console.log(e.message);
+    } catch (error) {
+      throw error;
     }
   }
 
@@ -34,8 +34,8 @@ class ApiServices {
     try {
       const req = await axios.get('/wallet/transaction/categories');
       return req.data.payload;
-    } catch (e) {
-      console.log(e.message);
+    } catch (error) {
+      throw error;
     }
   }
 
@@ -43,14 +43,18 @@ class ApiServices {
     try {
       const req = await axios.get('/wallet/transactions');
       return req.data.payload;
-    } catch (e) {
-      console.log(e.message);
+    } catch (error) {
+      throw error
     }
   }
 
   async getStats({ month, year }, token) {
-    const req = await axios.get(`wallet/stats?month=${month}&year=${year}`);
-    return req.data.payload;
+    try {
+      const req = await axios.get(`wallet/stats?month=${month}&year=${year}`);
+      return req.data.payload;
+    } catch (error) {
+      throw error
+    }
   }
 
   async createTransaction(userData, token) {
@@ -61,8 +65,8 @@ class ApiServices {
     try {
       const { data } = await axios.post('/wallet/transaction', userData);
       return data;
-    } catch (e) {
-      console.log(e.message);
+    } catch (error) {
+      throw error;
     }
   }
 
@@ -72,8 +76,8 @@ class ApiServices {
         headers: { Authorization: `Bearer ${token}` },
       });
       return data.payload;
-    } catch (e) {
-      console.log(e.message);
+    } catch (error) {
+      throw error;
     }
   }
 }

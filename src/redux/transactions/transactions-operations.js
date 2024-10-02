@@ -3,23 +3,34 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import ApiServices from 'services/ApiServices';
 
+import { showSessionExpiredModal } from 'redux/modalSlice';
+
 axios.defaults.baseURL = 'http://wallet-app-back.onrender.com';
 
 const fetchTransactions = createAsyncThunk(
   'transactions/fetchTransactions',
-  async token => {
+  async (token, { dispatch, rejectWithValue }) => {
     try {
-      return await ApiServices.getTransactions(token);
+      const data = await ApiServices.getTransactions(token);
+      return data;
     } catch (error) {
-      toast(`${error.message}`, {
-        position: 'top-right',
-        autoClose: 1500,
-        hideProgressBar: true,
-        closeOnClick: true,
-      });
+      if (error.response.data.message === 'jwt expired') {
+        dispatch(showSessionExpiredModal());
+      } else {
+        // Display the error message in a toast
+        toast(`${error.message}`, {
+          position: 'top-right',
+          autoClose: 1500,
+          hideProgressBar: true,
+          closeOnClick: true,
+        });
+      }
+
+      return rejectWithValue(error.message);
     }
   },
 );
+
 
 const addTransaction = createAsyncThunk(
   'transactions/addTransaction',
@@ -77,17 +88,22 @@ const deleteTransaction = createAsyncThunk(
 
 const fetchTransactionsStatistics = createAsyncThunk(
   'transactions/fetchTransactionStatistics',
-  async ({ month, year, token }, rejectWithValue) => {
-    // const { t } = useTranslation();
-
+  async ({ month, year, token }, { dispatch, rejectWithValue }) => {
     try {
-      return await ApiServices.getStats({ month, year }, token);
+      const data = await ApiServices.getStats({ month, year }, token);
+      return data;
     } catch (error) {
-      // toast.error(t('error_something'));
-      toast.error('404. Something wrong!')
+      if (error.response.data.message === 'jwt expired') {
+        // Trigger the session expired modal
+        dispatch(showSessionExpiredModal());
+      } else {
+        toast.error('404. Something wrong!');
+        return rejectWithValue(error.message);
+      }
     }
   },
 );
+
 
 export const operations = {
   fetchTransactions,

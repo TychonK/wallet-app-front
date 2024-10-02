@@ -3,7 +3,8 @@ import { createPortal } from 'react-dom';
 import { Overlay, Modal } from './ModalWindow.styled';
 
 const ModalWindow = ({ children, closeModal: setModal }) => {
-    const modalRoot = document.querySelector('#modal-root');
+  const modalRoot = document.querySelector('#modal-root');
+  
     const handleKeyDown = useCallback(
     e => {
       if (e.code === 'Escape') {

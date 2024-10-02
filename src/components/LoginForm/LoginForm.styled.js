@@ -68,6 +68,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   display: block;
   margin-left: 50px;
+  width: calc(100% - 50px);
 
   outline: 0;
   border: 0;
@@ -87,11 +88,14 @@ export const Input = styled.input`
 
 export const InputIcon = styled.svg`
   position: absolute;
-  bottom: 7px;
+  bottom: 12px;
+
+  width: 40px;
+  height: 20px;
 
   left: 5px;
   padding-left: 10px;
-  color: var(--color-gray-light);
+  color: var(--color-black);
 
   @media (min-width: 1280px) {
     top: 1px;

@@ -15,6 +15,8 @@ import {
 } from 'components';
 import { GlobalStyles, FontStyles, lightTheme, darkTheme } from './stylesheet';
 
+import SessionExpiredModal from 'components/SessionExpiredModal/SessionExpiredModal';
+
 const RegistrationPage = lazy(() =>
   import(
     './pages/RegistrationPage' /* webpackChunkName: 'registration-page' */
@@ -58,9 +60,12 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-      <BackGround /><GlobalStyles /><FontStyles />
+      <BackGround />
+      <GlobalStyles />
+      <FontStyles />
       <ToastContainer autoClose={5000} pauseOnHover theme="colored" />
       <ThemeSwitcher toggleTheme={toggleTheme} theme={theme} />
+      <SessionExpiredModal />
 
       <Suspense fallback={<Spinner />}>
         <Routes>
