@@ -18,7 +18,6 @@ const authReducer = createReducer(initialState, {
   [register.fulfilled]: (state, { payload }) => {
     state.user = payload.user;
     state.token = payload.token;
-    state.isLoggedIn = true;
     state.isLoading = false; // Set loading to false when registration completes
   },
   [register.rejected]: (state, { payload }) => {
