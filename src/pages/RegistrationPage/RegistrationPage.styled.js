@@ -92,21 +92,20 @@ export const Icon = styled('svg')`
   top: 4px;
 `;
 export const Wrap = styled('div')`
-  margin-bottom: 60px;
+margin-bottom: 60px;
   position: relative;
 `;
+
 export const Form = styled('div')`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   background: ${({ theme }) => theme.headers};
   box-sizing: border-box;
-  width: 320px;
-  padding: 32px 20px 36px 20px;
+  padding: 32px 20px;
   flex-direction: column;
-  padding-bottom: 36px;
-  margin-left: auto;
-  margin-right: auto;
+
+  height: 100vh;
 
   @media screen and (min-width: 768px) {
     width: 533px;

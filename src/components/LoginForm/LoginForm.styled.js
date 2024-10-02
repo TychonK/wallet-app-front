@@ -88,14 +88,14 @@ export const Input = styled.input`
 
 export const InputIcon = styled.svg`
   position: absolute;
-  bottom: 12px;
-
-  width: 40px;
+  bottom: 10px;
+ 
   height: 20px;
+  width: 40px;
 
   left: 5px;
   padding-left: 10px;
-  color: var(--color-black);
+  color: var(--color-gray);
 
   @media (min-width: 1280px) {
     top: 1px;
