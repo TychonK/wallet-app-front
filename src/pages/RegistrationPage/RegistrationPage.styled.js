@@ -138,8 +138,10 @@ export const WrapperForm = styled.div`
     height: 100%;
   }
   @media screen and (min-width: 1280px) {
-    width: 731px;
-    padding: 52px 91px 52px 107px;
+    width: 730px;
+    border-radius: 0 0 10px 10px;
+    padding: 120px 110px;
+
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(50px);
   }
