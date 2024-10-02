@@ -4,7 +4,8 @@ export const ModalContainer = styled.div`
   width: 320px;
   max-height: 700px;
   padding: 20px 20px 35px;
-  background-color: ${({ theme }) => theme.headers};
+  background-color: ${({ theme }) =>
+    theme.headers}; // Theme color for modal background
   box-sizing: border-box;
 
   @media (min-width: 768px) {
@@ -16,7 +17,6 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalBtn = styled.button`
-
   position: absolute;
   top: 20px;
   right: 20px;
@@ -25,7 +25,6 @@ export const ModalBtn = styled.button`
   outline: none;
   cursor: pointer;
 
-  
   width: 30px;
   height: 30px;
   display: flex;
@@ -51,11 +50,11 @@ export const ModalBtn = styled.button`
 
 export const ModalTitle = styled.h2`
   margin-bottom: 40px;
-
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
+  color: ${({ theme }) => theme.text}; // Theme color for title text
 `;
 
 export const ModalForm = styled.form`
@@ -75,15 +74,15 @@ export const CheckboxText = styled.span`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
-  color: ${({ theme }) => theme.gray};
+  color: ${({ theme }) => theme.gray}; // Theme color for checkbox text
 `;
 
 export const CheckboxTextPlus = styled(CheckboxText)`
-  color: var(--color-secondary);
+  color: ${({ theme }) => theme.primary}; // Theme color for "income" (plus)
 `;
 
 export const CheckboxTextMinus = styled(CheckboxText)`
-  color: var(--color-tertiary);
+  color: var(--color-tertiary); // Adjust if tertiary color exists in your theme
 `;
 
 export const ModalSelect = styled.select`
@@ -97,18 +96,19 @@ export const ModalSelect = styled.select`
   line-height: 1.5;
   border: transparent;
   outline: none;
-  border-bottom: 1px solid ${({ theme }) => theme.gray};
-  appearance: none;
-  cursor: pointer;
+  border-bottom: 1px solid ${({ theme }) => theme.gray}; // Theme color for border
+  background: ${({ theme }) =>
+    theme.headers}; // Theme color for select background
+  color: ${({ theme }) => theme.text}; // Theme color for text
 
   &::placeholder {
-    color: ${({ theme }) => theme.gray};
+    color: ${({ theme }) => theme.gray}; // Placeholder color from theme
   }
 `;
 
 export const ModalInputWrapper = styled.div`
   position: relative;
-  
+
   @media (min-width: 768px) {
     display: flex;
     justify-content: space-between;
@@ -128,9 +128,11 @@ export const ModalInput = styled.input`
   line-height: 1.5;
   border: transparent;
   outline: none;
-  border-bottom: 1px solid ${({ theme }) => theme.gray};
-  box-sizing: border-box;
-  background: ${({ theme }) => theme.headers};
+
+  border-bottom: 1px solid ${({ theme }) => theme.gray}; // Border from theme
+  background: ${({ theme }) => theme.headers}; // Background color from theme
+  color: ${({ theme }) => theme.text}; // Text color from theme
+
   @media (min-width: 768px) {
     width: 185px;
   }
@@ -147,10 +149,12 @@ export const ModalInputComment = styled.textarea`
   font-size: 18px;
   line-height: 1.5;
   border: transparent;
-  border-bottom: 1px solid ${({ theme }) => theme.gray};
+  border-bottom: 1px solid ${({ theme }) => theme.gray}; // Theme for the border
   outline: none;
   resize: none;
-  background: ${({ theme }) => theme.headers};
+  background: ${({ theme }) => theme.headers}; // Theme for background
+  color: ${({ theme }) => theme.text}; // Text color from theme
+
   @media (min-width: 768px) {
     height: 32px;
   }
@@ -185,15 +189,15 @@ export const ModalButtonAdd = styled(ModalButton)`
 
   &:hover,
   &:focus {
-    background-color: #03a682;
+    background-color: #03a682; // Optional hover effect, or set via theme
   }
 `;
 
 export const ModalButtonCancel = styled(ModalButton)`
   background-color: transparent;
   color: var(--color-primary);
-  
-   border: 1px solid var(--color-primary);
+
+  border: 1px solid var(--color-primary);
 
   transition: background-color 300ms var(--cubic-bezier),
     color 300ms var(--cubic-bezier);
@@ -205,7 +209,6 @@ export const ModalButtonCancel = styled(ModalButton)`
 
   &:hover,
   &:focus {
-   
     background: var(--color-primary-light);
     color: var(--color-white);
     border-color: transparent;
@@ -216,10 +219,11 @@ export const ErrorMesage = styled.p`
   position: absolute;
   width: 100%;
   top: 55px;
-
   font-size: 12px;
   font-weight: bold;
-  color: var(--color-tertiary);
+  color: var(
+    --color-tertiary
+  ); // Customize for error message color or add to theme
 
   @media (min-width: 768px) {
     margin: 0;
