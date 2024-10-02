@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -21,7 +24,13 @@ export const Button = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    bottom: 40px;
-    right: 40px;
+    bottom: 55px;
+    right: 55px;
+    width: 55px;
+    height: 55px;
+  }
+
+  svg {
+    display: block;
   }
 `;

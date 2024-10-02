@@ -78,7 +78,7 @@ export const HomeTabWrap = styled.div`
 export const CurrencyWrap = styled.div`
     margin: 28px 0 0 0;
     ${size.tablet}{
-        margin: 0 0 0 20px;
+        margin: 0 0 0 10px;
       }
     ${size.desktop}{
         margin: 32px 0 0 0;

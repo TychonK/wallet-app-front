@@ -14,7 +14,7 @@ export const MobileCard = styled.div`
         ? 'var(--color-secondary)'
         : 'var(--color-tertiary)'};
   &:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 `;
 
@@ -49,6 +49,10 @@ export const NoTransactions = styled.p`
 `;
 
 export const MobileButtonDelete = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background: var(--color-tertiary);
   object-fit: fill;
   border: none;
@@ -64,10 +68,16 @@ export const MobileButtonDelete = styled.button`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   transition: all 250ms var(--cubic-bezier);
   color: var(--color-white);
+
   &:hover {
     transform: scale(1.02) translate(-5px, 3px);
   }
+
   &:active {
     transform: scale(0.9);
+  }
+
+  svg {
+    display: block;
   }
 `;

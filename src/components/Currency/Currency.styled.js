@@ -19,7 +19,7 @@ export const CurrencyTable = styled.table`
   background-size: contain;
 
   @media (min-width: 768px) {
-    min-width: 336px;
+    min-width: 310px;
     min-height: 182px;
   }
 

@@ -14,6 +14,10 @@ export const BalanceSumm = styled.p`
   font-weight: 700;
   font-size: 30px;
   margin-top: 10px;
+
+  @media (min-width: 768px) {
+    margin-top: 0px;
+  }
   // color: var(--color-black);
 `;
 
@@ -24,18 +28,20 @@ export const BalanceCurrencySymbol = styled.span`
 export const BalanceWrapper = styled.div`
   background-color: ${({ theme }) => theme.headers};
   width: 252px;
-  height: 80px;
   border-radius: 30px;
-  padding-left: 28px;
+  padding: 10px 10px 10px 28px;
+  margin-top: 28px;
   // margin-bottom: 20px;
 
   @media (min-width: 768px) {
-    width: 326px;
-    padding-left: 40px;
+    height: 80px;
+    margin-top: 0;
+    width: 310px;
+    padding-left: 5px 0 0 40px;
   }
 
   @media (min-width: 1280px) {
-    width: 355px;
-    // margin-top: 28px;
+    height: auto;
+    width: 393px;
   }
 `;
