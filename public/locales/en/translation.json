@@ -14,9 +14,10 @@
   "session_expired_text": "Your session has expired. Please log in again to continue.",
   "session_expired_login": "Go to Login",
 
-  "ccy": "Currency",
-  "buy": "Buy",
-  "sale": "Sale",
+  "convert_from": "Convert",
+  "convert_to": "To",
+  "to": "to",
+
   "home": "Home",
 
   "name": "Your name",

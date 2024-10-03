@@ -23,6 +23,7 @@ export default function Balance() {
   const dispatch = useDispatch();
   const isHome = location.pathname === '/home' || '/diagram';
   const { t } = useTranslation();
+  
   const allTransations = useSelector(getAllTransactions);
 
   useEffect(() => {

@@ -58,18 +58,16 @@ export const Currency = () => {
     <CurrencyTable>
       <TableHeader>
         <TableRow>
-          <HeadCell>{t('ccy')}</HeadCell>
-          <HeadCell>{t('buy')}</HeadCell>
-          <HeadCell>{t('sale')}</HeadCell>
+          <HeadCell>{ t('convert_from') } { currency.base }</HeadCell>
+          <HeadCell>{t('convert_to')} {/*currency.qoute*/}</HeadCell>
         </TableRow>
       </TableHeader>
       <TableBody>
         {status === 'success' &&
           (
-            <TableRow key={currency.base}>
-              <TableData>{currency.base}</TableData>
+            <TableRow key="Convert to">
+              <TableData>{t("convert_to")}</TableData>
               <TableData>{parseFloat(currency.rates.PLN).toFixed(2)}</TableData>
-              <TableData>{parseFloat(currency.rates.EUR).toFixed(2)}</TableData>
             </TableRow>)
         }
         {status === 'pending' && (
