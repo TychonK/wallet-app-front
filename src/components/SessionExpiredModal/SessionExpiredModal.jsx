@@ -11,14 +11,14 @@ const SessionExpiredModal = () => {
   const dispatch = useDispatch();
   const sessionExpired = useSelector((state) => state.modal.sessionExpired);
   const navigate = useNavigate();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   if (!sessionExpired) return null;
 
   const handleClose = () => {
-    dispatch(hideSessionExpiredModal());
-    dispatch(logOut());
-    navigate('/login');
+     dispatch(hideSessionExpiredModal());
+     dispatch(logOut());
+     navigate('/login');
   };
 
   return (
@@ -31,7 +31,7 @@ const SessionExpiredModal = () => {
         </CloseBtn>
 
         <Title>{t('session_expired_title')}</Title>
-        <Message>{t('session_expired_text')}</Message>
+        <Message>{t('session_expired_text')}</Message> 
 
         <BtnContainer>
           <ConfirmBtn onClick={handleClose}>{t('session_expired_login')}</ConfirmBtn>

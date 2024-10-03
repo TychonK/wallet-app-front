@@ -41,7 +41,7 @@ const addTransaction = createAsyncThunk(
     // const { t } = useTranslation();
 
     try {
-      if (typeTransaction || category === '') {
+      if (typeTransaction) {
         const data = await ApiServices.createTransaction({
           typeTransaction,
           sum,
@@ -50,7 +50,17 @@ const addTransaction = createAsyncThunk(
         });
         // toast.success('Transaction add successfuly!');
         return data.payload;
-      } else {
+      } else if (typeTransaction === false && category === '') {
+        const data = await ApiServices.createTransaction({
+          typeTransaction,
+          sum,
+          date,
+          description
+        });
+        // toast.success('Transaction add successfuly!');
+        return data.payload;
+       }
+      else {
         const data = await ApiServices.createTransaction({
           typeTransaction,
           sum,
