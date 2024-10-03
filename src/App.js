@@ -65,7 +65,6 @@ const App = () => {
       <FontStyles />
       <ToastContainer autoClose={5000} pauseOnHover theme="colored" />
       <ThemeSwitcher toggleTheme={toggleTheme} theme={theme} />
-      <SessionExpiredModal />
 
       <Suspense fallback={<Spinner />}>
         <Routes>
@@ -98,6 +97,7 @@ const App = () => {
           <Route path="/" element={<Navigate to="/home" />}></Route>
           <Route path="*" element={<Navigate to="/home" />}></Route>
         </Routes>
+        <SessionExpiredModal />
       </Suspense>
     </ThemeProvider>
   );
